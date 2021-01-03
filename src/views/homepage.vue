@@ -39,8 +39,9 @@
             </div>
         </div>
         <div id="content">
-            <vue-waterfall-easy :imgsArr="imgsArr" ></vue-waterfall-easy>
+            <vue-waterfall-easy :imgsArr="imgsArr" @click="Image" id="pubu"></vue-waterfall-easy>
         </div>
+        <decorator-dia :dialog-visible.sync="isValid" :image-id="imageId"></decorator-dia>
 
         <el-dialog
                 title="新建文件夹"
@@ -56,9 +57,11 @@
 
 <script>
     import vueWaterfallEasy from "vue-waterfall-easy";
+    import DecoratorDia from "../components/decoratorDia";
     export default {
         name: "homepage",
         components: {
+            DecoratorDia,
             vueWaterfallEasy
         },
         data() {
@@ -70,32 +73,12 @@
                 width : 100,
                 beforeIndex : 0, // 用于存储上一次选择的index
                 defaultFolder : "",
-                name : sessionStorage.getItem("name")
+                name : sessionStorage.getItem("name"),
+                isValid : false,
+                imageId : 0
             };
         },
         methods: {
-            // turn3() {
-            //     let ea3 = document.getElementById("ea3");
-            //     let ea2 = document.getElementById("ea2");
-            //     let font2 = document.getElementById("XJ1");
-            //     let font3 = document.getElementById("XJ2");
-            //     font2.style.color = "black";
-            //     font3.style.color = "white";
-            //     ea3.style.backgroundColor = "#1EBFFF";
-            //     ea2.style.backgroundColor = "white";
-            //     this.imgsArr = this.imgsArr_2;
-            // },
-            // turn2() {
-            //     let ea3 = document.getElementById("ea3");
-            //     let ea2 = document.getElementById("ea2");
-            //     let font2 = document.getElementById("XJ1");
-            //     let font3 = document.getElementById("XJ2");
-            //     font3.style.color = "black";
-            //     font2.style.color = "white";
-            //     ea2.style.backgroundColor = "#1EBFFF";
-            //     ea3.style.backgroundColor = "white";
-            //     this.imgsArr = this.imgsArr_1;
-            // }
             requestFoldersList(){
                 return new Promise((resolve , reject) => {
                     this.$axios({
@@ -192,6 +175,12 @@
                     this.$message.warning("创建失败，服务器异常.")
                     console.log(err);
                 })
+            },
+        //    高清图
+            Image(event,target){
+                let id =  target.value._id;
+                this.imageId = id;
+                this.isValid = true;
             }
         },
         async mounted() {
@@ -300,5 +289,9 @@
     }
     .each:hover {
         background-color: rgba(81, 205, 255, 0.6);
+    }
+
+    #pubu{
+        z-index: 10;
     }
 </style>

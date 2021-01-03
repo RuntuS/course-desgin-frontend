@@ -4,7 +4,7 @@
             <img src="https://lao-lan-go.oss-cn-beijing.aliyuncs.com/%E7%BB%BC%E5%90%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/Back.png" alt="回退">
         </div>
         <div class="container">
-            <h1>注册Pixiv Search</h1>
+            <h1>注册Anime Search</h1>
             <form class="form">
                 <div class="token">
                     <input type="text" placeholder="邮箱" v-model="account" id="mailInput">

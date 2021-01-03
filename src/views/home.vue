@@ -7,6 +7,9 @@
         </transition>
 
         <div class="topBar">
+            <div class="icon-white">
+                <img src="https://lao-lan-go.oss-cn-beijing.aliyuncs.com/%E7%BB%BC%E5%90%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/icon-white.png" alt="icon-white">
+            </div>
             <div class="router" v-if="name === ''">
                 <div class="login" @click="turn">
                     Sign in
@@ -22,12 +25,18 @@
             </div>
         </div>
 
-        <div class="title">
+        <div class="mainBox">
+            <div class="icon-box">
+                <img alt="icon" src="https://lao-lan-go.oss-cn-beijing.aliyuncs.com/%E7%BB%BC%E5%90%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/icon-blue.png" />
+            </div>
+            <div class="title">
+                <p>从这里开始</p>
+            </div>
+            <div class="input">
+                <my-input v-bind:attr="index"></my-input>
+            </div>
+        </div>
 
-        </div>
-        <div class="input">
-            <my-input v-bind:attr="index"></my-input>
-        </div>
 
 
 
@@ -169,7 +178,8 @@
 
     .input{
         position: relative;
-        top: 100px;
+        right: 20px;
+        top: 20px;
     }
 
     #name{
@@ -186,6 +196,7 @@
         color: rgba(255,255,255,0.4);
     }
 
+    /*动态*/
 
     .background-enter,.background-leave-to{
         opacity: 0;
@@ -197,6 +208,55 @@
 
     .background-enter-to , .background-leave{
         opacity: 1;
+    }
+
+/*   分界线*/
+
+    .mainBox{
+        background-color: rgba(250,250,250,0.8);
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 50%;
+        position: relative;
+        top: 50px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 30px;
+        align-items: center;
+    }
+
+
+    .title{
+        margin-top: -15px;
+    }
+
+    .title > p{
+
+        font-size: 20px;
+    }
+
+    .icon-box{
+        width: 315px;
+        height: 60px;
+
+    }
+    .icon-box > img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .icon-white{
+        width: 150px;
+        height: 30px;
+        position: absolute;
+        top: 25px;
+        left: 30px;
+    }
+    .icon-white > img{
+        width: 100%;
+        height: 100%;
     }
 
 

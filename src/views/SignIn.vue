@@ -41,7 +41,7 @@
             return {
                 account : "",
                 password : "",
-                sentence : "Welcome To Pixiv Search!",
+                sentence : "Welcome To Anime Search!",
                 isLoading : false
             }
         },

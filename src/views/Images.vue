@@ -2,8 +2,8 @@
     <div class="image">
 <!--        topBar开始-->
         <div class="topBar">
-            <div class="icon">
-                <img src="https://pixivic.com/img/icon.9a42bbfa.svg" alt="icon">
+            <div class="icon-balabala">
+                <img src="https://lao-lan-go.oss-cn-beijing.aliyuncs.com/%E7%BB%BC%E5%90%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/icon-blue.png" alt="icon">
             </div>
 
             <div class="searchBar">
@@ -274,6 +274,17 @@
 
     #dialog{
         width: 100%;
+    }
+
+    .icon-balabala{
+        width: 150px;
+        height: 30px;
+    }
+
+    .icon-balabala > img{
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
     }
 
 
